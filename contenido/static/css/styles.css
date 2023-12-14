@@ -280,7 +280,7 @@ pre code {
 
 code {
   font-size: 0.875em;
-  color: var(--bs-code-color);
+  color: var(--bs-accordion-active-color);
   word-wrap: break-word;
 }
 a > code {
@@ -3440,6 +3440,48 @@ textarea.form-control-lg {
   overflow: hidden;
   border-top: 1px solid var(--bs-dropdown-divider-bg);
   opacity: 1;
+}
+
+.nav-link-modif {
+  margin-right: 3%;
+  position: relative;
+  background-image: linear-gradient(70deg, #1e30f3, #00f8ff);
+  background-repeat: no-repeat;
+  background-size: 0% .125rem;
+}
+
+.nav-link-modif:hover{
+  color: linear-gradient(10deg, #1e30f3, #00f8ff);
+  background-size: 100% .125rem;
+  background-position: center bottom;
+  transition: background-size .3s ease-in-out;
+}
+
+.nav-link::after{
+  content: "";
+  background-image: #00f8ff;
+  position: absolute;
+  left: 0;
+  top: 92%;
+  width: 100%;
+  height: .125rem;
+  opacity: 0;
+  border-radius: 1em;
+}
+
+.nav-link.active{
+  position: relative;
+}
+
+.nav-link.active:hover{
+  transform: none;
+  background-color: none;
+  cursor: default;
+}
+
+.nav-link.active::after{
+  opacity: 1;
+  background-color: #1e30f3;
 }
 
 .dropdown-item {
@@ -11556,11 +11598,11 @@ html {
 
 .bg-gradient-primary-to-secondary {
   background: #1e30f3;
-  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+  background: linear-gradient(135deg, #1e30f3 0%, #20dad8 100%);
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #20dad8  100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
